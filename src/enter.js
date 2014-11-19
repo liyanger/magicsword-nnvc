@@ -13,7 +13,7 @@ define(['backbone', 'url'], function (Backbone, Url) {
         }
         var webRoot = {
             asset: '/api',
-            mock: '/magicsword/mock-data/api'
+            mock: '/magicsword-nnvc/mock-data/api'
         };
         defaultOptions.webRoot = webRoot[defaultOptions.mock];
 
