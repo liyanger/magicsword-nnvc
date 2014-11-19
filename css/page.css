@@ -236,7 +236,9 @@ select,input{
     line-height:50px;
     background:#f1f0ee;
     border-bottom:1px solid #e1dfda;
-    color:#003856;}
+    color:#003856;
+    font-size:16px;
+    font-weight:normal;}
 .recommendTable td{
     text-indent:1em;
     border-bottom:1px solid #e1dfda;
