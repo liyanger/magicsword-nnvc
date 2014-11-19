@@ -1,0 +1,22 @@
+{{each $data as $tr index}}
+<tr>
+    <td><a href="/company/{{$tr.id}}">{{$tr.name}}</a></td>
+    <td>
+        {{each $tr.tags as $tag}}
+        <span>{{$tag}}</span>
+        {{/each}}
+    </td>
+    <td>
+        {{if $tr.founders.length > 0 }}
+        <a href="/founder/{{$tr.founders[0]}}">
+            {{$tr.founders[0]}}
+        </a>
+        {{else}}
+        <a href="/founder/未知">
+            未知
+        </a>
+        {{/if}}
+    </td>
+    <td>无</td>
+</tr>
+{{/each}}

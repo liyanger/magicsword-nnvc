@@ -1,0 +1,36 @@
+/**
+ * @file:   文件描述-Model
+ * @author: lizhantong(lztlovely@126.com)
+ * @depend:
+ * @date:   {{date}}
+ */
+define(function () {
+
+    return Backbone.Model.extend({
+
+        /**
+         * 构造函数
+         *
+         * @constructor
+         */
+        initialize: function () {
+
+        },
+
+        /**
+         *
+         *
+         * @public
+         */
+        loadA: function () {
+            $.ajax(
+                this.url,
+                {
+                    success: function (data) {
+                        //
+                    }
+                }
+            );
+         }
+    });
+});

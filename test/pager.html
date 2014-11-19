@@ -1,0 +1,37 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="pageSystem.js"></script>
+    <script>
+        var psys;
+        window.onload = function() {
+            psys = new PageSystem(1120, "pageDiv", 10, showMsg); //总记录数, 分页系统容器，每组10页,回调
+            psys.init();
+        }
+
+        function showMsg(currentPage, pageSize) {
+            //回调方法自定义，两个参数，第一个为当前页，第二个为每页记录数
+            /****************将currentPage和pageSize请求数据更新列表,最好使用ajax技术******************/
+            alert("请求数据要的相应参数>> currentPage: "+ currentPage + " pageSize: " + pageSize);
+        }
+
+        /*****如果要更新分页系统请如下操作******/
+            //psys.update(count); //@count 为记录总数
+        function updatePageSys() {
+
+            psys.update(150); //@count 为记录总数
+        }
+    </script>
+    <style>
+        #pageDiv{
+            font-size:13px;
+        }
+    </style>
+</head>
+<body>
+<div id="pageDiv">
+</div>
+<br/><br/>
+<a href="#" onclick="updatePageSys();"/>更新分页系统</a>
+</body>
+</html>
