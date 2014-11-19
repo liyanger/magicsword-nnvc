@@ -6,7 +6,8 @@ require.config({
         'ajax': 'common/ms.ajax',
         'backbone': '../dep/backbone-1.1.2',
         'template': '../dep/template-3.0.0.min',
-        'url': 'core/url'
+        'url': 'core/url',
+        'constant': 'core/constant'
     },
     shim: {
         'backbone': {

@@ -50,6 +50,15 @@ define(function () {
     Url.loadCompanyList = function () {
         return this.getWebRoot() + 'companys';
     };
+    /**
+     * 获取个人兴趣列表Url
+     *
+     * @public
+     * @return {string} url
+     */
+    Url.loadPersonalInterestList = function () {
+        return this.getWebRoot() + 'personal-interest';
+    };
 
     return Url;
 });

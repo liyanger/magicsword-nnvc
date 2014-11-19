@@ -6,10 +6,19 @@
  */
 define(
     [
+        'constant',
         'page/main/model',
-        'page/main/company-list-template'
+        'page/main/company-list-template',
+        'page/main/personal-info-template',
+        'page/main/interest-list-template'
     ],
-    function (Model, CompanyListTemplate) {
+    function (
+        Constant,
+        Model,
+        CompanyListTemplate,
+        PersonalInfoTemplate,
+        InterestListTemplate
+    ) {
 
         return Backbone.View.extend({
             events: {
@@ -33,7 +42,16 @@ define(
                         $('.j-tbody').html(CompanyListTemplate.render(data));
                     }
                 );
+                this.listenTo(
+                    this.model,
+                    'change:personalInterestList',
+                    function (model, data) {
+                       $('.j-personal-info').html(PersonalInfoTemplate.render(data));
+                       $('.j-interestLabel').html(InterestListTemplate.render(data.weighted_tags));
+                    }
+                );
                 this.model.loadCompanyList();
+                this.model.loadPersonalInterestList();
             },
             /**
              * test

@@ -1,0 +1,34 @@
+<dl class="indexPic">
+    <dt><img src="../css/images/personalPic.jpg" /></dt>
+    <dd>
+        <strong>{{$data.name}}</strong>
+    </dd>
+</dl>
+<h3 class="introduction"><strong>教育</strong></h3>
+<p class="introduction1">河南工业大学,食品科学与工程食品工程</p>
+<h3 class="introduction"><strong>简介</strong></h3>
+<p class="introduction1">{{$data.brief}}</p>
+<h3 class="introduction"><strong>工作</strong></h3>
+<p class="introduction1">{{$data.pitch}}</p>
+<h3 class="introduction"><strong>所在地</strong></h3>
+<p class="introduction1">{{$data.location}}</p>
+<h3 class="introduction"><strong>投资阶段</strong></h3>
+<p class="introduction1">
+    {{each $data.invest_round as $invround index}} {{$invround}}
+    {{/each}}
+</p>
+<h3 class="introduction"><strong>投资领域</strong></h3>
+<div class="introduction2">
+    <span>移动游戏</span>
+    <span>电子商务</span>
+    <span>移动APP</span>
+    <span>互联网广告</span>
+    <span>移动游戏</span>
+    <span>电子商务</span>
+    <span>移动APP</span>
+    <span>互联网广告</span>
+    <span>移动游戏</span>
+    <span>电子商务</span>
+    <span>移动APP</span>
+    <span>互联网广告</span>
+</div>
