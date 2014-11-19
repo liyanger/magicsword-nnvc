@@ -71,6 +71,8 @@ select,input{
 .nav li a,.personal dd,.footerNav,.footerNav a{
     color:#c9cac5;}
 .nav li a,.personal dd{ color:#fff;}
+.nav li a:hover,.personal1 li a:hover{ text-decoration: none;}
+
 .personal{
     height:50px;
     line-height:50px;
@@ -94,16 +96,19 @@ select,input{
 }
 .personal1{
     position:absolute;
-    bottom:-70px;
-    right:1%;
-    width:130px;
+    bottom:-72px;
+    right:0;
+    width:110px;
     height:70px;
-    background:#262529;
+    background:#f6f6f9;
+    border:1px solid #afafaf;
 }
-.personal1 li{
+.personal1 li a{
+    display: block;
     line-height:25px;
     padding:5px 10%;}
-.personal1 li a{ color:#fff;}
+.personal1 li a:hover{ background: #464646;color:#fff;}
+
 
 /*主体*/
 .main{
@@ -157,7 +162,7 @@ select,input{
     cursor:pointer;
     position:relative;
 }
-.interestLabel li,.recommendTable td span,.pagesRight a,.introduction2 span,.SimilarDiv span,companyActive1{
+.interestLabel li,.recommendTable td span,.pagesRight a,.introduction2 span,.SimilarDiv span,.companyActive1,.personal1{
     -webkit-border-radius:3px;
     -moz-border-radius:3px;
     -ms-border-radius:3px;
@@ -290,6 +295,7 @@ select,input{
     height:80px;}
 .indexPic dd strong{
     font-weight:normal;
+    line-height:40px;
     color:#d95c5c;
     font-size:24px;}
 
