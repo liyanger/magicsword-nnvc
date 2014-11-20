@@ -3,6 +3,7 @@ require.config({
     paths: {
         'underscore': '../dep/underscore-1.6.0.min',
         'jquery': '../dep/jquery-1.11.1.min',
+        'pagination': '../dep/jquery.pagination',
         'ajax': 'common/ms.ajax',
         'backbone': '../dep/backbone-1.1.2',
         'template': '../dep/template-3.0.0.min',
@@ -14,8 +15,14 @@ require.config({
             deps: [
                 'underscore',
                 'jquery',
+                'pagination',
                 'ajax',
                 'template'
+            ]
+        },
+        'pagination': {
+            deps: [
+                'jquery'
             ]
         },
         'ajax': {

@@ -22,9 +22,12 @@ define(
 
         return Backbone.View.extend({
             events: {
-                'click #test': 'test'
+                'click #test': 'test',
+                'click .j-personal-icon': 'showPersonalMsg'
             },
-
+            showPersonalMsg: function (event) {
+                $(event.target).next('ul').show();
+            },
             /**
              * 构造函数
              * @param {$HTMLElement} option.el view的顶层DOM：
@@ -32,7 +35,6 @@ define(
              * @constructor
              */
             initialize: function () {
-                var me = this;
                 this.model = new Model();
 
                 this.listenTo(
@@ -40,6 +42,16 @@ define(
                     'change:companyList',
                     function (model, data) {
                         $('.j-tbody').html(CompanyListTemplate.render(data));
+                        $(".j-agination").pagination(50, {
+                            prev_text: '上一页',
+                            next_text: '下一页',
+                            num_edge_entries: 1, //边缘页数
+                            num_display_entries: 4, //主体页数
+                            callback: function () {
+                                alert();
+                            },
+                            items_per_page:1 //每页显示1项
+                        });
                     }
                 );
                 this.listenTo(
@@ -52,16 +64,19 @@ define(
                 );
                 this.model.loadCompanyList();
                 this.model.loadPersonalInterestList();
+                this.bindEvent();
             },
-            /**
-             * test
-             *
-             * @param {event} event 下拉框值改变的事件
-             * @public
-             */
-            test: function (event) {
-                alert('测试');
+
+            bindEvent: function () {
+                $(document).mousedown(function (e) {
+                    // 如果点击的是个人信息下拉框里面的内容，就不隐藏下拉框
+                    if (!$.contains($('.j-personal-box')[0], e.target)) {
+                        $('.j-personal-msg').hide();
+                    }
+                });
             },
+
+
             /**
              * 销毁当前view
              *

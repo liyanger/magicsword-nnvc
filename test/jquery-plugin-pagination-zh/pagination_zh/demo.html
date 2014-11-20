@@ -21,6 +21,8 @@ $(function(){
 		var num_entries = $("#hiddenresult div.result").length;
 		// 创建分页
 		$("#Pagination").pagination(num_entries, {
+            prev_text: '上一页',
+            next_text: '下一页',
 			num_edge_entries: 1, //边缘页数
 			num_display_entries: 4, //主体页数
 			callback: pageselectCallback,
