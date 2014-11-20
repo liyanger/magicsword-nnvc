@@ -23,10 +23,24 @@ define(
         return Backbone.View.extend({
             events: {
                 'click #test': 'test',
-                'click .j-personal-icon': 'showPersonalMsg'
+                'click .j-personal-icon': 'showPersonalMsg',
+                'click .j-level-label': 'changeLabelLevel'
             },
             showPersonalMsg: function (event) {
                 $('.j-personal-msg').show();
+            },
+            changeLabelLevel: function (event) {
+                var $target = $(event.target);
+                if (event.target.tagName.toLowerCase() === 'a') {
+                    $target = $target.parent();
+                }
+
+                $target.find('div').show();
+                var curLevel = $target.attr('level');
+                $target.removeClass('level-' + curLevel);
+                curLevel ++;
+                $target.addClass('level-' + curLevel);
+                $target.attr('level', curLevel);
             },
             /**
              * 构造函数
