@@ -11,7 +11,7 @@
 
 .pagination a, .pagination span {
     display: inline-block;
-    line-height:30px;
+   float: left;
     padding:0 0.8em;
     margin-right: 5px;
     margin-bottom: 5px;
@@ -19,6 +19,7 @@
 }
 
 .pagination .current {
+    float: left;
     background: #fff;
     color: #c1c3ca;
     border: 1px solid #c3c5cc;
