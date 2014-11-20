@@ -154,6 +154,7 @@ select, input {
 
 .nav li a, .personal dd {
     color: #fff;
+
 }
 
 .nav li a:hover, .personal1 li a:hover {
@@ -181,10 +182,13 @@ select, input {
     float: left;
 }
 
-.personal dd a {
+.personal dd span {
     display: block;
     float: right;
-    padding-right: 20px;
+    width: 30px;
+    height: 50px;
+    background: url(images/personal1.png) no-repeat left center;
+
 }
 
 .personal1 {
@@ -280,7 +284,8 @@ select, input {
     position: relative;
 }
 
-.interestLabel li, .recommendTable td span, .pagesRight a, .introduction2 span, .SimilarDiv span, .companyActive1, .personal1 {
+.interestLabel li, .recommendTable td span, .pagesRight a, .introduction2 span, .SimilarDiv span, .companyActive1, .personal1
+,.searchCompany,.searchLabel a {
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     -ms-border-radius: 3px;
@@ -302,13 +307,23 @@ select, input {
     border: 1px solid #d9d9d9;
     z-index: 99;
 }
-
-.interest2 img {
+.interest2 span{
+    float: left;
+    display: block;
     width: 12px;
     height: 11px;
     margin-left: 15%;
+    margin-top: 10px;
 }
-
+.interest2 span:nth-child(1){
+    background: url(images/icon1.jpg) no-repeat;
+}
+.interest2 span:nth-child(2){
+    background: url(images/icon2.jpg) no-repeat;
+}
+.interest2 span:nth-child(3){
+    background: url(images/icon3.jpg) no-repeat;
+}
 .interestLabel li a {
     text-decoration: none;
 }
@@ -827,6 +842,74 @@ select, input {
     width: 17px;
     height: 17px;
 }
+/*搜索公司*/
+.searchCompany{
+    border:5px solid #ede7e1;
+    padding:1%;}
+.searchBt{
+    line-height:50px;
+    font-size:28px;
+    margin-bottom:1%;}
+.searchBt1{
+    height:44px;
+    line-height:44px;
+    padding-left:1%;
+    background:#eeeeee;
+    font-size:16px;}
+.searchBt1 span{
+    color:#e62323;
+    font-size:16px;
+    padding:0 0.5%;}
+.search2{
+    clear:both;
+    padding:1% 0 0.5% 0;
+    overflow:hidden;
+    border-bottom:1px solid #f2f2f2;}
+.searchSpanBt{
+    font:12px/24px "宋体";
+    font-weight:bold;
+    margin-right:10px;}
+.searchLabel{
+    width:92%;
+    overflow:hidden;}
+.searchLabel a{
+    display:block;
+    float:left;
+    height:24px;
+    line-height:24px;
+    padding:0 30px 0 15px;
+    margin:0 1% 1% 0;
+    background:#e8e8e8 url(images/add.png) no-repeat right center;}
+.searchLabel a:hover{
+    text-decoration:none;}
+.searchLabel1 a{
+    background:#df5151 url(images/close.png) no-repeat right center;
+    color:#fff;}
+.unified2{
+    width:32%;
+    height:160px;
+    margin:0 0 2% 1%;
+    display:inline;
+}
+.unified2 dt img{
+    width:160px;
+    height:160px;}
+.unified2 dd{
+    width:56%;
+    height:160px;
+    overflow-y:auto;}
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*1002屏幕兼容*/
 @media screen and (max-width: 1024px) {
@@ -888,6 +971,22 @@ select, input {
     .Similar1 dd h3 a {
         font-size: 14px;
     }
+    .unified2{
+        width:32%;
+        height:100px;
+        margin:0 0 2% 1%;
+        display:inline;
+    }
+    .unified2 dt img{
+        width:100px;
+        height:100px;}
+    .unified2 dd{
+        width:56%;
+        height:100px;
+        overflow-y:auto;}
+
+
+
 }
 	
 	
