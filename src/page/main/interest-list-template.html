@@ -1,10 +1,10 @@
 {{each $data as $item index}}
     <li class="level-{{$item}} j-level-label" level="{{$item}}">
         <a href="#">{{index}}</a>
-        <div class="interest2 hide">
-            <a href="#"><img src="../css/images/icon1.jpg" /></a>
-            <a href="#"><img src="../css/images/icon2.jpg" /></a>
-            <a href="#"><img src="../css/images/icon3.jpg" /></a>
+        <div class="interest2 hide j-interest-level-controller">
+            <span class="add"></span>
+            <span class="reduce"></span>
+            <span class="delete"></span>
         </div>
     </li>
 {{/each}}

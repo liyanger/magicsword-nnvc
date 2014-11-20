@@ -24,23 +24,37 @@ define(
             events: {
                 'click #test': 'test',
                 'click .j-personal-icon': 'showPersonalMsg',
-                'click .j-level-label': 'changeLabelLevel'
+                'click .j-level-label': 'showLabelLevelBtn',
+                'click .j-interest-level-controller .add': 'addLevel',
+                'click .j-interest-level-controller .reduce': 'reduceLevel',
+                'click .j-interest-level-controller .delete': 'deleteLevel'
             },
             showPersonalMsg: function (event) {
                 $('.j-personal-msg').show();
             },
-            changeLabelLevel: function (event) {
+            showLabelLevelBtn: function (event) {
                 var $target = $(event.target);
-                if (event.target.tagName.toLowerCase() === 'a') {
-                    $target = $target.parent();
+                var tagName = event.target.tagName.toLowerCase();
+                if ( tagName === 'a' || tagName === 'li') {
+                    if ( tagName === 'a') {
+                        $target = $target.parent();
+                    }
+                    $('.j-interest-level-controller').hide();
+                    $target.find('div').show();
+                    // 把当前按钮框保存到this
+                    this.$levelBtns = $target;
                 }
-
-                $target.find('div').show();
-                var curLevel = $target.attr('level');
-                $target.removeClass('level-' + curLevel);
+            },
+            addLevel: function (event) {
+                var $target = $(event.target);
+                var $levelEl = $target.parent().parent();
+                var curLevel = $levelEl.attr('level');
+                $levelEl.removeClass('level-' + curLevel);
                 curLevel ++;
-                $target.addClass('level-' + curLevel);
-                $target.attr('level', curLevel);
+                $levelEl.addClass('level-' + curLevel);
+                $levelEl.attr('level', curLevel);
+                event.stopPropagation();
+                $target.parent().hide();
             },
             /**
              * 构造函数
@@ -62,7 +76,7 @@ define(
                             num_edge_entries: 1, //边缘页数
                             num_display_entries: 4, //主体页数
                             callback: function () {
-                                alert();
+                                //alert();
                             },
                             items_per_page:1 //每页显示1项
                         });
@@ -82,14 +96,19 @@ define(
             },
 
             bindEvent: function () {
+                var me = this;
                 $(document).mousedown(function (e) {
                     // 如果点击的是个人信息下拉框里面的内容，就不隐藏下拉框
                     if (!$.contains($('.j-personal-box')[0], e.target)) {
                         $('.j-personal-msg').hide();
                     }
+                    // 如果是当前按钮容器内的按钮动作，就不隐藏按钮区域
+                    if (!$.contains(me.$levelBtns[0], e.target)) {
+                        $('.j-interest-level-controller').hide();
+                    }
+
                 });
             },
-
 
             /**
              * 销毁当前view

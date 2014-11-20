@@ -176,10 +176,12 @@ select, input {
     max-width: 100%;
     width: 40px;
     height: 40px;
+    cursor: default;
 }
 
 .personal dd {
     float: left;
+    cursor: pointer
 }
 
 .personal dd span {
@@ -315,13 +317,13 @@ select, input {
     margin-left: 15%;
     margin-top: 10px;
 }
-.interest2 span:nth-child(1){
+.interest2 .add{
     background: url(images/icon1.jpg) no-repeat;
 }
-.interest2 span:nth-child(2){
+.interest2 .reduce{
     background: url(images/icon2.jpg) no-repeat;
 }
-.interest2 span:nth-child(3){
+.interest2 .delete{
     background: url(images/icon3.jpg) no-repeat;
 }
 .interestLabel li a {

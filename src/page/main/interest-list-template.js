@@ -9,7 +9,7 @@ define(['template'], function (template) {
         $out+=$escape($item);
         $out+='">\r\n        <a href="#">';
         $out+=$escape(index);
-        $out+='</a>\r\n        <div class="interest2 hide">\r\n            <a href="#"><img src="../css/images/icon1.jpg" /></a>\r\n            <a href="#"><img src="../css/images/icon2.jpg" /></a>\r\n            <a href="#"><img src="../css/images/icon3.jpg" /></a>\r\n        </div>\r\n    </li>\r\n';
+        $out+='</a>\r\n        <div class="interest2 hide j-interest-level-controller">\r\n            <span class="add"></span>\r\n            <span class="reduce"></span>\r\n            <span class="delete"></span>\r\n        </div>\r\n    </li>\r\n';
         });
         return $out;
     }
