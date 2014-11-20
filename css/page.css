@@ -154,6 +154,7 @@ select, input {
 
 .nav li a, .personal dd {
     color: #fff;
+
 }
 
 .nav li a:hover, .personal1 li a:hover {
@@ -181,10 +182,13 @@ select, input {
     float: left;
 }
 
-.personal dd a {
+.personal dd span {
     display: block;
     float: right;
-    padding-right: 20px;
+    width: 30px;
+    height: 50px;
+    background: url(images/personal1.png) no-repeat left center;
+
 }
 
 .personal1 {
@@ -302,13 +306,23 @@ select, input {
     border: 1px solid #d9d9d9;
     z-index: 99;
 }
-
-.interest2 img {
+.interest2 span{
+    float: left;
+    display: block;
     width: 12px;
     height: 11px;
     margin-left: 15%;
+    margin-top: 10px;
 }
-
+.interest2 span:nth-child(1){
+    background: url(images/icon1.jpg) no-repeat;
+}
+.interest2 span:nth-child(2){
+    background: url(images/icon2.jpg) no-repeat;
+}
+.interest2 span:nth-child(3){
+    background: url(images/icon3.jpg) no-repeat;
+}
 .interestLabel li a {
     text-decoration: none;
 }
