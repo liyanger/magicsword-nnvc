@@ -5,19 +5,23 @@
 .pagination a {
     text-decoration: none;
 	border: 1px solid #cccccc;
+	background:#fff;
+	border-radius:3px;
 }
 
 .pagination a, .pagination span {
     display: inline-block;
-    padding: 0.1em 0.4em;
+	line-height:30px;
+    padding:0 0.8em;
     margin-right: 5px;
 	margin-bottom: 5px;
+	border-radius:3px;
 }
 
 .pagination .current {
-    background: #26B;
-    color: #fff;
-	border: 1px solid #AAE;
+    background: #fff;
+    color: #c1c3ca;
+	border: 1px solid #c3c5cc;
 }
 
 .pagination .current.prev, .pagination .current.next{
