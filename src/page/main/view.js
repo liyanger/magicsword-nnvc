@@ -49,12 +49,31 @@ define(
                 var $target = $(event.target);
                 var $levelEl = $target.parent().parent();
                 var curLevel = $levelEl.attr('level');
+                if (curLevel >= 5) {
+                    return;
+                }
                 $levelEl.removeClass('level-' + curLevel);
                 curLevel ++;
                 $levelEl.addClass('level-' + curLevel);
                 $levelEl.attr('level', curLevel);
                 event.stopPropagation();
-                $target.parent().hide();
+            },
+            reduceLevel: function (event) {
+                var $target = $(event.target);
+                var $levelEl = $target.parent().parent();
+                var curLevel = $levelEl.attr('level');
+                if (curLevel <= 1) {
+                    return;
+                }
+                $levelEl.removeClass('level-' + curLevel);
+                curLevel --;
+                $levelEl.addClass('level-' + curLevel);
+                $levelEl.attr('level', curLevel);
+                event.stopPropagation();
+            },
+            deleteLevel: function (event) {
+                var $target = $(event.target);
+                $target.parent().parent().remove();
             },
             /**
              * 构造函数
