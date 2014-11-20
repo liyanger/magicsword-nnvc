@@ -26,7 +26,7 @@ define(
                 'click .j-personal-icon': 'showPersonalMsg'
             },
             showPersonalMsg: function (event) {
-                $(event.target).next('ul').show();
+                $('.j-personal-msg').show();
             },
             /**
              * 构造函数
