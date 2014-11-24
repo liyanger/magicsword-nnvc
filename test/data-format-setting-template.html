@@ -16,8 +16,7 @@
             <select name="{{indkey}}">
                 <option value="">请选择</option>
                 {{each dataformatOptions as $optionValue optionKey}}
-                <option value={{optionKey}} {{if optionKey === ind.format}} selected="selected"
-                {{/if}}>{{$optionValue}}</option>
+                <option value={{optionKey}} {{if
                 {{/each}}
             </select>
         </div>
